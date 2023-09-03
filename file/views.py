@@ -11,6 +11,7 @@ from rest_framework import serializers, status
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.views import APIView
+from drf_yasg import openapi
 
 from account.models import UserDetails
 from standard.response import ErrorMessage, MessageCode, get_error_response
@@ -118,7 +119,18 @@ class GenerateDownloadFileLinkView(APIView):
 
     @swagger_auto_schema(
         request_body=no_body,
-        responses={"download_link": "", "message": "success"},
+        responses={
+        200: openapi.Response(
+            description="Success",
+            schema=openapi.Schema(
+                type=openapi.TYPE_OBJECT,
+                properties={
+                    "download_link": openapi.Schema(type=openapi.TYPE_STRING),
+                    "message": openapi.Schema(type=openapi.TYPE_STRING),
+                },
+            ),
+        )
+    }
     )
     def post(self, *args, **kwargs):
         kwargs_serializer = self.KwargsValidationSerializer(data=kwargs)
