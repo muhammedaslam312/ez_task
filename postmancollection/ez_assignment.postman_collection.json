@@ -1,0 +1,148 @@
+{
+	"info": {
+		"_postman_id": "ec50658a-ab26-4ba9-a108-ad826f620563",
+		"name": "ez_assignment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22929059",
+		"_collection_link": "https://blue-zodiac-589978.postman.co/workspace/vibencode~8b5ea4b6-4832-4c6e-ad81-8a82956a1498/collection/22929059-ec50658a-ab26-4ba9-a108-ad826f620563?action=share&source=collection_link&creator=22929059"
+	},
+	"item": [
+		{
+			"name": "Accounts",
+			"item": [
+				{
+					"name": "client_register",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "ops_user_register",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "File",
+			"item": [
+				{
+					"name": "upload file",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file_name",
+									"value": "aslam",
+									"type": "text"
+								},
+								{
+									"key": "file_content",
+									"type": "file",
+									"src": "/C:/Users/hp/Downloads/Free_Test_Data_100KB_PPTX.pptx"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{api_host}}/api/file/",
+							"host": [
+								"{{api_host}}"
+							],
+							"path": [
+								"api",
+								"file",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get_all_files",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "generate_download_link",
+					"request": {
+						"method": "POST",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "download_file",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": [
+			{
+				"key": "value",
+				"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjkzNzM4OTk0LCJpYXQiOjE2OTM3MzUzOTQsImp0aSI6ImRlZGE4YjdhNzlhNzQ0ODk5YzgxYWEyM2YyNTVhMzQ0IiwidXNlcl9pZCI6NCwidXNlcl9pbmZvIjp7ImlkIjo0LCJmaXJzdF9uYW1lIjoiYXNsYW0iLCJsYXN0X25hbWUiOiJtIn19.C9IraQ53sYQlaJKQiG9DCUMPCEjVeg5kGRD7FasKkKw",
+				"type": "string"
+			},
+			{
+				"key": "key",
+				"value": "Authorization",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "api_host",
+			"value": "http://127.0.0.1:8000",
+			"type": "string"
+		}
+	]
+}
